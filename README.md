@@ -176,8 +176,6 @@ Displays available categories and provides quick product filtering.
 
 👨‍💻 Developer
 
-Developed by:
-
 __Mohammed Abduldaem Abdulghani Al-Mahmoudi__
 
 __Information Technology Student__
