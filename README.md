@@ -104,20 +104,26 @@ flutter_application_1/
 │   │   └── theme.dart
 │   │
 │   ├── features/
+
 │   │   ├── auth/
+
 │   │   ├── cart/
 │   │   ├── favorites/
 │   │   ├── home/
 │   │   └── products/
 │   │
 │   ├── shared/
+
 │   │   └── widgets/
 │   │
 │   ├── firebase_options.dart
+
 │   └── main.dart
 │
 ├── pubspec.yaml
+
 ├── README.md
+
 └── .gitignore
 
 ---
