@@ -1,0 +1,112 @@
+====================================================
+FIREBASE DATABASE STRUCTURE
+====================================================
+
+This document outlines the complete Firestore database architecture for the NeonShop application.
+
+----------------------------------------------------
+1. CATEGORIES COLLECTION
+----------------------------------------------------
+Collection Name: categories
+Document ID: Custom (e.g., "category_001")
+
+Fields:
+- id (String): Same as document ID.
+- name (String): Display name of the category.
+- createdAt (Timestamp): When the category was created.
+
+Example Document (categories/category_001):
+{
+  "id": "category_001",
+  "name": "Electronics",
+  "createdAt": Timestamp(seconds=1678886400, nanoseconds=0)
+}
+
+----------------------------------------------------
+2. PRODUCTS COLLECTION
+----------------------------------------------------
+Collection Name: products
+Document ID: Custom (e.g., "product_001")
+
+Fields:
+- categoryId (String): Reference to the parent category.
+- createdAt (Timestamp): When the product was added.
+- description (String): Product description.
+- imageUrl (String): URL to the product image (e.g., Unsplash).
+- isAvailable (Boolean): Availability status.
+- name (String): Product display name.
+- price (Number): Product price.
+- stock (Number): Current inventory count.
+
+Example Document (products/product_001):
+{
+  "categoryId": "category_001",
+  "createdAt": Timestamp(seconds=1678886400, nanoseconds=0),
+  "description": "Ergonomic wireless mouse with silent clicks.",
+  "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=500",
+  "isAvailable": true,
+  "name": "Wireless Mouse",
+  "price": 39.99,
+  "stock": 50
+}
+
+----------------------------------------------------
+3. USERS COLLECTION
+----------------------------------------------------
+Collection Name: users
+Document ID: Firebase Auth UID (e.g., "abc123xyz")
+
+Fields:
+- uid (String): Same as document ID.
+- name (String): User's full name.
+- email (String): User's email address.
+- createdAt (Timestamp): Account creation date.
+
+Example Document (users/abc123xyz):
+{
+  "uid": "abc123xyz",
+  "name": "Ahmed Ali",
+  "email": "ahmed@example.com",
+  "createdAt": Timestamp(seconds=1678886400, nanoseconds=0)
+}
+
+----------------------------------------------------
+4. FAVORITES SUBCOLLECTION
+----------------------------------------------------
+Path: users/{uid}/favorites/{productId}
+Document ID: Product ID (e.g., "product_001")
+
+Fields:
+- productId (String): Same as document ID.
+- addedAt (Timestamp): When it was favorited.
+
+Example Document (users/abc123xyz/favorites/product_001):
+{
+  "productId": "product_001",
+  "addedAt": Timestamp(seconds=1678886400, nanoseconds=0)
+}
+
+----------------------------------------------------
+5. CART SUBCOLLECTION
+----------------------------------------------------
+Path: users/{uid}/cart/{productId}
+Document ID: Product ID (e.g., "product_001")
+
+Fields:
+- productId (String): Same as document ID.
+- quantity (Number): Amount in cart.
+- addedAt (Timestamp): When it was first added to cart.
+
+Example Document (users/abc123xyz/cart/product_001):
+{
+  "productId": "product_001",
+  "quantity": 2,
+  "addedAt": Timestamp(seconds=1678886400, nanoseconds=0)
+}
+
+====================================================
+RELATIONSHIPS SUMMARY
+====================================================
+- A product belongs to exactly one category (products.categoryId -> categories.id).
+- A user can have many favorites (users/{uid}/favorites/{productId} -> products).
+- A user can have many cart items (users/{uid}/cart/{productId} -> products).
