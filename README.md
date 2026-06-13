@@ -81,10 +81,10 @@ Architecture
 📂 Project Structure
 
 flutter_application_1/
-│
-├── android/
+           │
+           ├── android/
 
-├── ios/
+           ├── ios/
 
 ├── web/
 
