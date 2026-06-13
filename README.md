@@ -80,56 +80,40 @@ Architecture
 
 📂 Project Structure
 
+```text
 flutter_application_1/
-           │
-           ├── android/
-
-           ├── ios/
-
+├── android/
+├── ios/
 ├── web/
-
 ├── linux/
-
 ├── macos/
-
 ├── assets/
-│
-├── screenshots/
-│   ├── login_screen.png
-│   ├── register_screen.png
-│   ├── home_screen.png
-│   ├── favorites_screen.png
-│   ├── cart_screen.png
-│   └── categories_screen.png
-│
+│   └── screenshots/
+│       ├── login_screen.png
+│       ├── register_screen.png
+│       ├── home_screen.png
+│       ├── favorites_screen.png
+│       ├── cart_screen.png
+│       └── categories_screen.png
 ├── lib/
 │   ├── core/
 │   │   ├── constants.dart
-│   │   ├── routes.dart
-│   │   └── theme.dart
-│   │
+│   │   └── routes.dart
 │   ├── features/
-
 │   │   ├── auth/
-
 │   │   ├── cart/
 │   │   ├── favorites/
 │   │   ├── home/
 │   │   └── products/
-│   │
 │   ├── shared/
-
 │   │   └── widgets/
-│   │
 │   ├── firebase_options.dart
-
-│   └── main.dart
-│
+│   ├── main.dart
+│   └── app.dart
 ├── pubspec.yaml
-
 ├── README.md
-
 └── .gitignore
+```
 
 ---
 
