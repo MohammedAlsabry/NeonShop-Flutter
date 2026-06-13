@@ -123,7 +123,7 @@ flutter_application_1/
 
 Allows registered users to securely access the application.
 
-![Login Screen](lib/screenshots/Login_screen.png)
+![Login Screen](lib/screenshots/login_screen.png)
 
 ---
 
