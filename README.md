@@ -83,10 +83,15 @@ Architecture
 flutter_application_1/
 │
 ├── android/
+
 ├── ios/
+
 ├── web/
+
 ├── linux/
+
 ├── macos/
+
 ├── assets/
 │
 ├── screenshots/
